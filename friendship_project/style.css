@@ -1,0 +1,322 @@
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    background:#05000a;
+
+    font-family:Arial,Helvetica,sans-serif;
+
+}
+
+
+/* ===========================
+   الخلفية
+=========================== */
+
+#background{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    radial-gradient(circle at center,
+    #4b0033 0%,
+    #220015 40%,
+    #08000c 100%);
+
+    z-index:-3;
+
+}
+
+
+
+/* ===========================
+   النجوم
+=========================== */
+
+#stars{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:-2;
+
+}
+
+
+
+/* ===========================
+   المشهد
+=========================== */
+
+#scene{
+
+    position:absolute;
+
+    width:700px;
+
+    height:700px;
+
+    left:50%;
+
+    top:50%;
+
+    transform:
+    translate(-50%,-50%);
+
+}
+
+
+
+/* ===========================
+   القلب
+=========================== */
+
+#heart{
+
+    position:absolute;
+
+    left:50%;
+
+    top:50%;
+
+    width:170px;
+
+    height:170px;
+
+    transform:
+    translate(-50%,-50%);
+
+    animation:
+    pulse 2s infinite ease-in-out;
+
+}
+
+
+
+#heartShape{
+
+    position:absolute;
+
+    width:120px;
+
+    height:120px;
+
+    background:#ff0048;
+
+    left:25px;
+
+    top:25px;
+
+    transform:
+    rotate(-45deg);
+
+    box-shadow:
+
+    0 0 30px #ff0048,
+
+    0 0 60px #ff0048,
+
+    0 0 120px #ff0048;
+
+}
+
+
+
+#heartShape::before{
+
+content:"";
+
+position:absolute;
+
+width:120px;
+
+height:120px;
+
+background:#ff0048;
+
+border-radius:50%;
+
+top:-60px;
+
+left:0;
+
+}
+
+
+
+#heartShape::after{
+
+content:"";
+
+position:absolute;
+
+width:120px;
+
+height:120px;
+
+background:#ff0048;
+
+border-radius:50%;
+
+left:60px;
+
+top:0;
+
+}
+
+
+
+/* ===========================
+   نبض القلب
+=========================== */
+
+@keyframes pulse{
+
+0%{
+
+transform:
+translate(-50%,-50%)
+scale(1);
+
+}
+
+50%{
+
+transform:
+translate(-50%,-50%)
+scale(1.15);
+
+}
+
+100%{
+
+transform:
+translate(-50%,-50%)
+scale(1);
+
+}
+
+}
+/* =====================================
+   الصور الدوارة
+===================================== */
+
+.orbit-photo{
+
+    position:absolute;
+
+    width:90px;
+    height:90px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:4px solid white;
+
+    box-shadow:
+        0 0 20px #ff4d88,
+        0 0 40px #ff4d88;
+
+    transition:
+        transform .1s linear,
+        opacity .1s linear;
+
+}
+
+
+/* =====================================
+   الرسائل
+===================================== */
+
+.orbit-text{
+
+    position:absolute;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    white-space:nowrap;
+
+    text-shadow:
+        0 0 10px #ff4d88,
+        0 0 20px #ff4d88;
+
+    transition:
+        transform .1s linear,
+        opacity .1s linear;
+
+}
+
+
+
+/* =====================================
+   قلوب صغيرة في الخلفية
+===================================== */
+
+.flying-heart{
+
+    position:fixed;
+
+    color:#ff5b9c;
+
+    font-size:18px;
+
+    pointer-events:none;
+
+    animation:flyHeart linear forwards;
+
+}
+
+
+
+@keyframes flyHeart{
+
+0%{
+
+transform:
+translateY(0)
+scale(.5);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+translateY(-110vh)
+scale(2);
+
+opacity:0;
+
+}
+
+}
